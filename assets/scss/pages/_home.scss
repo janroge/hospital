@@ -1,0 +1,67 @@
+@use '../abstracts/variables' as *; // El uso de "as *" trae todas las variables sin un prefijo
+
+// Estilos de la sección de bienvenida en la página de inicio
+.bienvenida {
+    text-align: center; // Centra el texto
+    margin-bottom: $spacing-unit * 4; // Margen inferior de 40px
+
+    &__titulo {
+        color: $primary-color; // Color del título
+        font-size: 2em; // Tamaño de fuente del título
+        margin-bottom: $spacing-unit; // Margen inferior
+    }
+
+    &__descripcion {
+        color: $text-color; // Color del texto
+        font-size: 1.2em; // Tamaño de fuente de la descripción
+    }
+}
+
+// Estilos para la sección de servicios en la página de inicio
+.servicios {
+    text-align: center;
+
+    &__titulo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+        width: 100%; /* Asegura que el título ocupe todo el ancho */
+    }
+
+    &__lista {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        width: 150px;
+        text-align: center;
+    }
+
+    &__icono {
+        width: 40px;
+        margin-bottom: 5px;
+    }
+}
+
+.servicios__item {
+    flex: 1 1 200px;
+    padding: 20px;
+    background-color: #f0f8ff; // Color de fondo claro
+    border: 1px solid #ddd; // Borde suave
+    border-radius: 8px; // Bordes redondeados
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Sombra sutil
+    text-align: center;
+}
+
+.testimonios {
+    flex: 1 1 200px;
+    padding: 20px;
+    background-color: #f0f8ff; // Color de fondo claro
+    border: 1px solid #ddd; // Borde suave
+    border-radius: 8px; // Bordes redondeados
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Sombra sutil
+    text-align: center;
+}

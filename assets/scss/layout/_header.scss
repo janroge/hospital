@@ -1,0 +1,52 @@
+@use '../abstracts/variables' as *; // El uso de "as *" trae todas las variables sin un prefijo
+
+// Estilos del encabezado principal
+.header {
+    background-color: $primary-color; // Fondo del encabezado usando el color principal
+    color: white; // Texto en blanco
+    padding: $spacing-unit * 2; // Espaciado de 20px (2 unidades de espaciado)
+    text-align: center; // Centra el contenido del texto
+    position: relative; // Hace que el header sea relativo para el posicionamiento del botón
+
+    &__logo {
+        display: inline-block; // Logo en bloque en línea
+    }
+
+    &__logo-img {
+        height: 80px; // Altura del logo
+        width: auto; // Ancho automático para mantener la proporción
+    }
+
+    &__nav {
+        .nav__list {
+            list-style-type: none; // Elimina viñetas de la lista
+            text-align: center; // Centra la lista de navegación
+            margin: $spacing-unit; // Añade margen alrededor de la lista
+        }
+
+        .nav__item {
+            display: inline-block; // Cada elemento se muestra en línea
+            margin-right: $spacing-unit * 1.5; // Espacio a la derecha de 15px
+        }
+
+        .nav__link {
+            color: white; // Color blanco para los enlaces
+            font-weight: bold; // Texto en negrita
+            text-decoration: none; // Quita el subrayado de los enlaces
+            &:hover {
+                color: $secondary-color; // Cambia el color al secundario en hover
+            }
+        }
+    }
+
+    &__btn-reservar {
+        background-color: $secondary-color; // Fondo del botón con el color secundario
+        color: $text-color; // Color de texto principal
+        padding: $spacing-unit $spacing-unit * 2; // Relleno de 10px y 20px
+        border-radius: $border-radius; // Bordes redondeados usando la variable
+        font-weight: bold; // Texto en negrita
+        position: absolute; // Posicionamiento absoluto dentro del header
+        right: $spacing-unit * 2; // Se coloca a la derecha
+        top: $spacing-unit * 2; // Espaciado desde la parte superior        
+    }
+}

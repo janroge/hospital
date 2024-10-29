@@ -1,0 +1,59 @@
+@use '../abstracts/variables' as *; // El uso de "as *" trae todas las variables sin un prefijo
+
+// Estilos para la página del equipo médico
+.equipo {
+    text-align: center; // Centra el texto
+    margin-bottom: $spacing-unit * 4; // Margen inferior de 40px
+
+    &__titulo {
+        color: $primary-color; // Color del título
+        font-size: 2em; // Tamaño de fuente grande
+        margin-bottom: $spacing-unit; // Margen inferior
+    }
+
+    &__descripcion {
+        color: $text-color; // Color del texto de la descripción
+        font-size: 1.2em; // Tamaño de fuente de la descripción
+        margin-bottom: $spacing-unit * 2; // Margen inferior de 20px
+    }
+
+    &__lista {
+        display: flex; // Muestra los doctores en fila
+        flex-wrap: wrap; // Permite que los elementos se muevan a la siguiente línea si no caben
+        justify-content: center; // Centra los doctores en la pantalla
+    }
+}
+
+// Estilos individuales para cada doctor
+.doctor {
+    flex: 1 1 200px; // Cada doctor ocupa un espacio flexible
+    text-align: center; // Centra el texto dentro de cada perfil de doctor
+    margin: $spacing-unit; // Añade un margen alrededor de cada perfil
+    padding: $spacing-unit * 2; // Relleno interno de 20px
+    background-color: white; // Fondo blanco para cada tarjeta de doctor
+    border-radius: $border-radius; // Bordes redondeados
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Sombra sutil alrededor de cada tarjeta
+
+    &__imagen {
+        border-radius: 50%; // Hace que la imagen sea circular
+        width: 100px; // Ancho fijo para la imagen
+        height: 100px; // Alto fijo para la imagen
+        margin-bottom: $spacing-unit; // Margen inferior para separar de otros elementos
+    }
+
+    &__nombre {
+        font-weight: bold; // Texto en negrita
+        margin-top: $spacing-unit; // Espacio superior para el nombre
+        color: $primary-color; // Usa el color principal
+    }
+
+    &__especialidad {
+        font-style: italic; // Estilo en cursiva para la especialidad
+        color: $accent-color; // Color secundario
+    }
+
+    &__descripcion {
+        margin-top: $spacing-unit; // Margen superior
+        color: $text-color; // Color del texto de descripción
+    }
+}

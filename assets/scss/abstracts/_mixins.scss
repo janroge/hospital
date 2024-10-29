@@ -1,0 +1,51 @@
+/*
+    // Mixin para media queries
+    // Este mixin permite usar media queries en todo el proyecto de forma más sencilla.
+    // Puedes usar "respond-to(mobile)", "respond-to(tablet)", o "respond-to(desktop)".
+    @mixin respond-to($breakpoint) {
+        @if $breakpoint == mobile {
+            @media (max-width: 768px) { @content; } // Aplica para pantallas de hasta 768px (móviles)
+        }
+        @else if $breakpoint == tablet {
+            @media (max-width: 1024px) { @content; } // Aplica para pantallas de hasta 1024px (tablets)
+        }
+        @else if $breakpoint == desktop {
+            @media (min-width: 1025px) { @content; } // Aplica para pantallas mayores a 1024px (escritorios)
+        }
+    }
+
+    // Mixin para el tamaño de fuente responsivo
+    // Este mixin permite ajustar el tamaño de fuente automáticamente para pantallas más pequeñas.
+    // Al llamar font-size(20px), el tamaño se reduce en un 10% en móviles.
+    @mixin font-size($size) {
+        font-size: $size; // Tamaño de fuente base
+        @include respond-to(mobile) {
+            font-size: $size * 0.9; // Reduce el tamaño en un 10% en pantallas móviles
+        }
+    }
+*/
+
+// Definimos los puntos de ruptura en variables para referencia
+$breakpoint-mobile: 768px;
+$breakpoint-tablet: 1024px;
+$breakpoint-desktop: 1025px;
+
+// Ejemplo de estilo sin media queries
+.my-element {
+    background-color: blue; // Estilo por defecto
+
+    // Media query para dispositivos móviles (ancho menor a 768px)
+    @media (max-width: #{$breakpoint-mobile}) {
+        background-color: green; // Cambia el fondo a verde en pantallas móviles
+    }
+
+    // Media query para tablets (ancho entre 768px y 1024px)
+    @media (min-width: 769px) and (max-width: #{$breakpoint-tablet}) {
+        background-color: orange; // Cambia el fondo a naranja en tablets
+    }
+
+    // Media query para pantallas de escritorio (ancho mayor a 1024px)
+    @media (min-width: #{$breakpoint-desktop}) {
+        background-color: red; // Cambia el fondo a rojo en pantallas de escritorio
+    }
+}

@@ -1,0 +1,31 @@
+@use '../abstracts/variables' as *; // El uso de "as *" trae todas las variables sin un prefijo
+@use 'buttons' as *; // El uso de "as *" trae todas las variables sin un prefijo
+
+// Estilos del formulario de contacto
+.contacto__form {
+    max-width: 500px; // Ancho máximo del formulario
+    margin: 0 auto; // Centra el formulario en la página
+    padding: $spacing-unit * 2; // Relleno interno de 20px
+    background-color: white; // Fondo blanco
+    border-radius: $border-radius; // Bordes redondeados
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Sombra sutil alrededor del formulario
+}
+
+.contacto__label {
+    font-weight: bold; // Negrita en las etiquetas
+    display: block; // Coloca la etiqueta en bloque
+    margin-top: $spacing-unit; // Espacio superior
+}
+
+.contacto__input, .contacto__textarea {
+    width: 100%; // Ocupan el 100% del ancho del formulario
+    padding: $spacing-unit; // Relleno de 10px
+    margin-bottom: $spacing-unit * 1.5; // Espacio inferior de 15px
+    border: 1px solid $text-color; // Borde gris oscuro
+    border-radius: $border-radius; // Bordes redondeados
+}
+
+.contacto__button {
+    @extend .button; // Extiende el estilo del botón general
+    width: 100%; // Ocupa el 100% del ancho del formulario
+}

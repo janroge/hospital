@@ -1,0 +1,17 @@
+// Base
+@use 'base/reset';
+@use 'base/typography';
+
+// Layout
+@use 'layout/header';
+@use 'layout/footer';
+@use 'layout/navigation';
+
+// Components
+@use 'components/buttons';
+@use 'components/form';
+
+// Pages
+@use 'pages/home';
+@use 'pages/equipo-medico';
+@use 'pages/contacto';

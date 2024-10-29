@@ -1,0 +1,32 @@
+@use '../abstracts/variables' as *; // El uso de "as *" trae todas las variables sin un prefijo
+
+// Estilos del pie de página
+.footer {
+    background-color: $primary-color; // Fondo usando el color principal
+    color: white; // Texto en blanco
+    text-align: center; // Centra el texto en el pie de página
+    padding: $spacing-unit * 2; // Espaciado de 20px
+    margin-top: $spacing-unit * 4; // Añade margen en la parte superior
+
+    &__links {
+        list-style-type: none; // Quita viñetas de la lista
+        padding: 0; // Elimina el relleno
+    }
+
+    &__link-item {
+        display: inline-block; // Cada enlace en línea
+        margin-right: $spacing-unit * 1.5; // Espacio entre enlaces
+    }
+
+    &__link, &__red {
+        color: white !important; // Texto blanco con importancia para sobrescribir otros estilos
+        font-weight: bold; // Negrita en los enlaces
+        &:hover {
+            color: $secondary-color; // Cambia a color secundario en hover
+        }
+    }
+
+    &__contacto, &__redes {
+        margin-top: $spacing-unit; // Espacio en la parte superior de las secciones de contacto y redes sociales
+    }
+}

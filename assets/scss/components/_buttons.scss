@@ -1,0 +1,13 @@
+@use '../abstracts/variables' as *; // El uso de "as *" trae todas las variables sin un prefijo
+
+// Estilos para botones generales
+.button {
+    display: inline-block; // Botones en línea
+    padding: $spacing-unit $spacing-unit * 2; // Relleno de 10px vertical y 20px horizontal
+    background-color: $primary-color; // Fondo con color principal
+    color: white; // Texto en blanco
+    border-radius: $border-radius; // Bordes redondeados
+    text-decoration: none; // Sin subrayado
+    text-align: center; // Centra el texto
+    font-weight: bold; // Texto en negrita    
+}

@@ -1,0 +1,35 @@
+@use '../abstracts/variables' as *; // El uso de "as *" trae todas las variables sin un prefijo
+
+// Sección de contacto
+.contacto {
+    text-align: center; // Centra el texto
+    margin-bottom: $spacing-unit * 4; // Margen inferior de 40px
+
+    &__titulo {
+        color: $primary-color; // Color del título de contacto
+        font-size: 2em; // Tamaño de fuente
+        margin-bottom: $spacing-unit; // Margen inferior
+    }
+
+    &__form {
+        @extend .contacto__form; // Extiende el estilo general del formulario
+    }
+}
+
+// Sección del mapa en la página de contacto
+.mapa {
+    margin-top: $spacing-unit * 2; // Margen superior
+
+    &__titulo {
+        color: $primary-color; // Color del título de la sección de mapa
+        font-size: 1.5em; // Tamaño de fuente
+        margin-bottom: $spacing-unit; // Margen inferior
+    }
+
+    &__imagen {
+        max-width: 100%; // Imagen de mapa se adapta a la pantalla
+        height: auto; // Mantiene la proporción
+        border-radius: $border-radius; // Bordes redondeados
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Sombra sutil
+    }
+}

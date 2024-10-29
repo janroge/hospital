@@ -1,0 +1,18 @@
+@use '../abstracts/variables' as *; // El uso de "as *" trae todas las variables sin un prefijo
+
+body {
+    font-family: $font-family; // Aplica la fuente principal definida en variables
+    font-size: $base-font-size; // Tamaño de fuente base definido en variables
+    color: $text-color; // Color del texto principal
+    background-color: $background-color; // Color de fondo general
+    line-height: 1.6; // Altura de línea para mejorar la legibilidad del texto
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: $primary-color; // Aplica el color principal a todos los encabezados
+    margin-bottom: $spacing-unit; // Espacio debajo de cada encabezado
+}
+
+p {
+    margin-bottom: $spacing-unit * 1.5; // Espacio debajo de cada párrafo, usando la unidad de espaciado
+}
