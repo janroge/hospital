@@ -1,2 +1,2 @@
-console.log("Página cargada correctamente");
-console.log("Usuario ha ingresado datos en el formulario");s
+console.log("Inicio de archivo scripts.js");
+console.log("Mensaje Taller 1 - M3: Página cargada correctamente");
