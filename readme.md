@@ -70,3 +70,16 @@ Se implementaron al menos tres componentes de Bootstrap para mejorar la accesibi
 - **Botones**: Botones personalizados en color y tamaño para llamadas a la acción.
 - **Formulario**: Formulario de contacto en la página de Contacto.
 - **Cards**: Se utilizan tarjetas para la visualización del equipo médico y servicios médicos.
+
+---
+
+### Event Loop en JavaScript
+El **event loop** es el mecanismo que permite a JavaScript manejar tareas asíncronas, como eventos del usuario o peticiones de red, de forma no bloqueante.
+
+- **Stack (Pila):** Maneja las tareas sincrónicas. Cada vez que se llama a una función, se apila en el stack.
+- **Heap (Montón):** Almacena objetos y variables en memoria.
+- **Queue (Cola):** Cola de tareas asíncronas. Cuando las tareas asíncronas están listas, se pasan al stack mediante el event loop.
+
+---
+
+
