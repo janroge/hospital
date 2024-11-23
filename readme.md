@@ -82,4 +82,50 @@ El **event loop** es el mecanismo que permite a JavaScript manejar tareas asínc
 
 ---
 
+## Actualización del Proyecto: Página Web del Hospital Privado
 
+### Nuevas Funcionalidades Implementadas
+
+#### Funcionalidades de JavaScript
+1. **Solicitar información del usuario (Home)**
+   - Muestra un prompt para que el usuario ingrese su nombre, correo electrónico y número de teléfono.
+   - Valida que el correo electrónico contenga un `@` y que el número de teléfono sea numérico y tenga al menos 8 dígitos.
+   - Muestra alertas al usuario con errores específicos en caso de datos inválidos.
+
+2. **Lista dinámica de doctores (Equipo Médico)**
+   - Utilizando un ciclo `for`, se genera dinámicamente una lista de doctores en la página del equipo médico.
+   - Se filtran los doctores con más de 5 años de experiencia utilizando condicionales para mostrarlos en la interfaz.
+
+3. **Manejo de errores (Contacto)**
+   - En la validación de datos del formulario de contacto, se implementó un bloque `try/catch` para manejar errores.
+   - Si el usuario ingresa un número de teléfono en formato incorrecto o un correo no válido, se muestra un mensaje de error.
+
+#### Modularización de JavaScript
+- Todo el JavaScript está organizado en módulos:
+  - **`home.js`**: Contiene las funcionalidades específicas para la página de inicio (Home).
+  - **`equipoMedico.js`**: Contiene las funcionalidades específicas para la página del equipo médico.
+  - **`contacto.js`**: Contiene las funcionalidades específicas para la página de contacto.
+- El archivo principal **`scripts.js`** detecta la página actual y ejecuta el módulo correspondiente.
+
+#### Estilos y Personalización
+1. **Modo Oscuro**
+   - Implementación de un botón que permite alternar entre modo claro y oscuro.
+   - El estado del modo (oscuro o claro) se guarda en `localStorage` para mantener la preferencia del usuario entre sesiones.
+   - Los estilos de fondo y color de texto fueron personalizados para que reflejen el modo seleccionado en toda la página.
+
+2. **Personalización de Bootstrap con SASS**
+   - Los estilos de Bootstrap fueron modificados para que reflejen la identidad del hospital:
+     - Colores: `$primary` (personalizado), `$secondary`, `$danger`.
+     - Tipografía: `$font-family-base`, `$font-size-base`.
+     - Espaciados: `$spacer`, `$btn-padding`.
+
+### Instrucciones Adicionales
+1. **Event Loop (JavaScript)**:
+   - Explicación en el README sobre cómo funciona el `event loop` en JavaScript (stack, heap y queue).
+   - Detalles sobre cómo se ejecutan las tareas asíncronas en el entorno del navegador.
+
+2. **Depuración y Debugging**:
+   - Uso del método `console.log()` en diferentes puntos del proyecto para depuración y mensajes informativos.
+   - Instrucciones para usar el `debugger` para rastrear errores en el código.
+
+---
