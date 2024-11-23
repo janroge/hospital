@@ -105,26 +105,10 @@ El **event loop** es el mecanismo que permite a JavaScript manejar tareas asínc
   - **`home.js`**: Contiene las funcionalidades específicas para la página de inicio (Home).
   - **`equipoMedico.js`**: Contiene las funcionalidades específicas para la página del equipo médico.
   - **`contacto.js`**: Contiene las funcionalidades específicas para la página de contacto.
+  - **`telefono.js`**: Función especializada en la validación de números de teléfono.
 - El archivo principal **`scripts.js`** detecta la página actual y ejecuta el módulo correspondiente.
 
-#### Estilos y Personalización
-1. **Modo Oscuro**
-   - Implementación de un botón que permite alternar entre modo claro y oscuro.
-   - El estado del modo (oscuro o claro) se guarda en `localStorage` para mantener la preferencia del usuario entre sesiones.
-   - Los estilos de fondo y color de texto fueron personalizados para que reflejen el modo seleccionado en toda la página.
-
-2. **Personalización de Bootstrap con SASS**
-   - Los estilos de Bootstrap fueron modificados para que reflejen la identidad del hospital:
-     - Colores: `$primary` (personalizado), `$secondary`, `$danger`.
-     - Tipografía: `$font-family-base`, `$font-size-base`.
-     - Espaciados: `$spacer`, `$btn-padding`.
-
-### Instrucciones Adicionales
-1. **Event Loop (JavaScript)**:
-   - Explicación en el README sobre cómo funciona el `event loop` en JavaScript (stack, heap y queue).
-   - Detalles sobre cómo se ejecutan las tareas asíncronas en el entorno del navegador.
-
-2. **Depuración y Debugging**:
+#### Depuración y Debugging
    - Uso del método `console.log()` en diferentes puntos del proyecto para depuración y mensajes informativos.
    - Instrucciones para usar el `debugger` para rastrear errores en el código.
 
