@@ -1,24 +1,36 @@
 # Proyecto: Página Web del Hospital Privado
 
 ## Descripción
+Este proyecto consiste en el desarrollo del sitio web de un hospital privado. El sitio incluye las páginas principales: Home, Equipo Médico y Contacto.
 
-Este proyecto representa el sitio web de un hospital privado. El sitio incluye las páginas principales: Home, Equipo Médico y Contacto.
+## Instrucciones para Visualizar
+1. Clona este repositorio: `git clone <URL_DEL_REPOSITORIO>`.
+2. Abre el archivo `index.html` en tu navegador web.
 
-## Instrucciones para visualizar
-
-1. Descargar este proyecto en formato zip o clonar el repositorio.
-2. Abrir el archivo `index.html` en un navegador web.
-
-## Estructura de carpetas
-
-- `/index.html` - Página principal (Home).
-- `/equipo-medico.html` - Página del equipo médico.
-- `/contacto.html` - Página de contacto.
-- `/assets/css/main.css` - Archivo de estilos CSS principal.
-- `/assets/scss/` - Carpeta de archivos SCSS para la modularización de estilos.
-- `/assets/img/` - Carpeta con imágenes y mapa.
-- `/assets/js/scripts.js` - Archivo de JavaScript para funcionalidades interactivas.
-- `/node_modules/` - Módulos instalados de npm, incluyendo Bootstrap y Popper.js.
+## Estructura de Carpetas
+```plaintext
+HOSPITAL_M2/
+├── assets/
+│   ├── css/
+│   │   └── main.css
+│   ├── data/
+│   │   └── doctores.json
+│   ├── img/
+│   │   ├── doctor1.png
+│   │   ├── doctor2.png
+│   │   ├── doctor3.png
+│   │   └── doctor4.png
+│   └── js/
+│       ├── modules/
+│       │   ├── home.js
+│       │   ├── equipoMedico.js
+│       │   ├── contacto.js
+│       │   └── telefono.js
+│       └── scripts.js
+├── index.html
+├── equipo-medico.html
+├── contacto.html
+├── README.md
 
 ## Vistas y funcionalidades
 
@@ -111,5 +123,58 @@ El **event loop** es el mecanismo que permite a JavaScript manejar tareas asínc
 #### Depuración y Debugging
    - Uso del método `console.log()` en diferentes puntos del proyecto para depuración y mensajes informativos.
    - Instrucciones para usar el `debugger` para rastrear errores en el código.
+
+---
+
+## Laboratorio Virtual 1: Funcionalidades Agregadas (Módulo 3)
+
+### 1. Manejo de Objetos JSON
+- Se implementó un objeto JSON (`doctores.json`) para almacenar la información de los doctores del hospital.
+- La información incluye:
+  - Nombre, especialidad, años de experiencia.
+  - Información adicional como horarios disponibles y datos de contacto.
+- Se utilizó `destructuring` para acceder y mostrar las propiedades específicas en la consola y en la interfaz web.
+
+### 2. Operaciones con JSON
+- **Clonación:**
+  - Se creó una copia de `doctoresArray` y se modificó sin afectar el original.
+- **Merge:**
+  - Se fusionó la información de los doctores con otra lista de servicios médicos.
+- **Recorrido y stringify:**
+  - Se recorrió el objeto JSON para mostrar los datos en el navegador.
+  - Se utilizó `JSON.stringify()` para convertir el objeto JSON en una cadena y mostrarla en la consola.
+
+### 3. Implementación de Estructuras de Datos
+- **Arreglos:**
+  - Se almacenó la lista de doctores en un arreglo, permitiendo operaciones como agregar, eliminar y buscar doctores.
+- **Pilas:**
+  - Se implementó una pila para gestionar las citas de los pacientes. La última cita agendada es atendida primero.
+- **Colas:**
+  - Se simuló el orden de llegada de los pacientes utilizando una cola en la página de contacto.
+
+### 4. Programación de Algoritmos
+- **Algoritmo de Búsqueda:**
+  - Permite encontrar un doctor específico en el arreglo de doctores utilizando el nombre como criterio.
+- **Algoritmo de Ordenamiento:**
+  - Ordena los doctores por años de experiencia de manera ascendente.
+  - La complejidad es `O(n log n)` para el ordenamiento.
+
+## Conceptos Utilizados
+
+### Manejo de JSON
+- Se implementaron las operaciones de clonación, fusión y recorrido de objetos JSON para optimizar la gestión de datos.
+
+### Estructuras de Datos
+- **Arreglos:** Manejo dinámico de listas para agregar, eliminar y buscar información.
+- **Pilas:** Gestión de citas para priorizar la última agendada.
+- **Colas:** Orden de llegada de pacientes simulado en la página de contacto.
+
+### Algoritmos
+- **Búsqueda:** Eficiente para encontrar doctores por nombre.
+- **Ordenamiento:** Permite organizar los doctores de manera óptima según la experiencia.
+
+### Explicación de Complejidad
+- **Búsqueda:** La complejidad es `O(n)` ya que recorre el arreglo linealmente.
+- **Ordenamiento:** Utiliza `sort()`, con complejidad `O(n log n)`.
 
 ---

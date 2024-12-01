@@ -1,0 +1,43 @@
+[
+    {
+        "nombre": "Dr. Juan Pérez",
+        "especialidad": "Cardiología",
+        "experiencia": 8,
+        "imagen": "/assets/img/doctor1.png",
+        "detalles": {
+            "horarios": ["Lunes 9:00-12:00", "Miércoles 14:00-17:00"],
+            "contacto": "juan.perez@hospitalprivado.com"
+        }
+    },
+    {
+        "nombre": "Dra. Ana Gómez",
+        "especialidad": "Pediatría",
+        "experiencia": 6,
+        "imagen": "/assets/img/doctor2.png",
+        "detalles": {
+            "horarios": ["Martes 10:00-13:00", "Jueves 15:00-18:00"],
+            "contacto": "ana.gomez@hospitalprivado.com"
+        }
+    },
+    {
+        "nombre": "Dr. Luis Torres",
+        "especialidad": "Neurología",
+        "experiencia": 9,
+        "imagen": "/assets/img/doctor3.png",
+        "detalles": {
+            "horarios": ["Lunes 14:00-17:00", "Viernes 9:00-12:00"],
+            "contacto": "luis.torres@hospitalprivado.com"
+        }
+    },
+    {
+        "nombre": "Dra. Carolina Díaz",
+        "especialidad": "Gastroenterología",
+        "experiencia": 7,
+        "imagen": "/assets/img/doctor4.png",
+        "detalles": {
+            "horarios": ["Miércoles 10:00-13:00", "Viernes 15:00-18:00"],
+            "contacto": "carolina.diaz@hospitalprivado.com"
+        }
+    }
+]
+
