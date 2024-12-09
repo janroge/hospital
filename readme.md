@@ -178,3 +178,67 @@ El **event loop** es el mecanismo que permite a JavaScript manejar tareas asínc
 - **Ordenamiento:** Utiliza `sort()`, con complejidad `O(n log n)`.
 
 ---
+
+## Laboratorio Virtual 2 - Actualización del README
+
+### Implementaciones y Funcionalidades
+
+#### Punto 1: Programación Funcional
+
+1. **Currying**: Implementación de una función para calcular el costo total de los servicios de un paciente basado en el número de consultas realizadas y el precio por consulta.
+   - Ejemplo de uso: `calcularCostoConsulta(50000)(3)` devuelve `150000`.
+
+2. **Función Flecha**: Uso de una función flecha para calcular el tiempo promedio de espera de los pacientes.
+   - Ejemplo: Dado `[15, 20, 10, 25]`, el resultado es `17.5` minutos.
+
+3. **Recursión**: Implementación de una función recursiva para calcular el total de horas de consulta de un doctor durante una semana.
+   - Ejemplo: Si el doctor trabaja 4 horas diarias, el resultado es `28` horas.
+
+4. **Composición de Funciones**: Uso de composición para aplicar descuentos en el costo de consultas basado en el número de consultas realizadas.
+   - Ejemplo: `calcularCostoConDescuento(50000, 3, 10)` devuelve `135000` con un descuento del 10%.
+
+#### Punto 2: Programación Orientada a Eventos y Programación Asíncrona
+
+1. **Eventos en la Página de Contacto**:
+   - Listener para capturar el envío del formulario. Se muestra un mensaje de confirmación al usuario con los datos ingresados.
+   - Creación y disparo de un evento personalizado `nuevoPaciente`, que simula la llegada de un nuevo paciente, mostrando una notificación en la página.
+
+2. **Async/Await para Simulación de API**:
+   - Uso de `async/await` para simular una llamada a una API REST que obtiene los datos de los doctores. Manejo de casos de éxito y error mediante `Promise`.
+   - Implementación de manejo de errores utilizando `try/catch`. En caso de error, se utiliza un callback para mostrar un mensaje al usuario.
+
+#### Punto 3: Programación Orientada a Objetos
+
+1. **Clase `Doctor`**:
+   - Propiedades: `nombre`, `especialidad` y `años de experiencia`.
+   - Métodos:
+     - `mostrarInformacion()`: Devuelve una cadena con la información del doctor.
+     - `calcularPacientesAtendidos(numDias)`: Calcula el total de pacientes atendidos basado en los días trabajados.
+
+2. **Subclase `Cirujano`**:
+   - Extiende la funcionalidad de la clase `Doctor`.
+   - Métodos:
+     - Sobrescribe `calcularPacientesAtendidos` para calcular el número de operaciones realizadas en lugar de consultas.
+   - Encapsulamiento: Implementación de getters y setters para la propiedad `años de experiencia`.
+
+---
+
+### Archivos Modificados
+
+- **`scripts.js`**:
+  - Actualización Configuración para cargar las funciones según la página activa (ahora se importan los js solo cuando se está en la página)
+
+- **`contacto.js`**:
+  - Implementación de eventos personalizados y simulación de API en la página de contacto.
+
+- **`equipoMedico.js`**:
+  - Implementación de la programación funcional y objetos relacionados con los doctores.
+
+- **`contacto.html`**:
+  - Ajustes menores para pruebas y despliegue de eventos.
+
+### Instrucciones
+
+1. Abre el proyecto en un servidor local o directamente en el navegador (se recomienda Live Server).
+2. Revisa la funcionalidad en las diferentes páginas (`equipo-medico.html` y `contacto.html`).
+3. Verifica la consola para los mensajes de debug y confirmación de funcionalidades.
