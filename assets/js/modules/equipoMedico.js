@@ -263,3 +263,155 @@ console.log(cirujano1.mostrarInformacion());
 console.log("Pacientes atendidos (Cirujano):", cirujano1.calcularPacientesAtendidos());
 console.log(cirujano1.mostrarOperacionesRealizadas());
 console.log(" ");
+
+////////////////////////////////////////////////////////////////////////
+// --- Trabajo Grupal --- 
+//
+// --- Punto 1 :  Ya era parte de lo desarrollado en el laboratorio 2
+
+////////////////////////////////////////////////////////////////////////
+// --- PUNTO 2: Implementación de Algoritmos y Estructuras de Datos ---
+
+// Verificar si window.doctoresArray está inicializado
+if (!window.doctoresArray || !Array.isArray(window.doctoresArray)) {
+    console.warn("window.doctoresArray no está inicializado. Inicializando con un arreglo vacío.");
+    window.doctoresArray = []; // Inicializa como un arreglo vacío si no está definido
+}
+
+// Gestión de citas con pila (Last In, First Out)
+const pilaCitasGrupo = []; // Nueva pila de citas
+
+export function agregarCitaGrupo(cita) {
+    pilaCitasGrupo.push(cita); // Agrega la cita al final de la pila
+}
+
+export function atenderCitaGrupo() {
+    return pilaCitasGrupo.pop(); // Remueve la última cita agregada
+}
+
+// Ejemplo de uso para citas con pila
+console.log("/////// --- Trabajo Grupal ---  Ejemplo de uso para citas con pila///////////");
+agregarCitaGrupo({ paciente: "Juan", doctor: "Dr. Pérez", hora: "10:00" });
+agregarCitaGrupo({ paciente: "Ana", doctor: "Dra. Gómez", hora: "10:30" });
+console.log("Citas en la pila:", pilaCitasGrupo);
+console.log("Atendiendo cita:", atenderCitaGrupo());
+console.log("Citas restantes:", pilaCitasGrupo);
+console.log(" ");
+
+// Gestión de pacientes con cola (First In, First Out)
+const colaPacientesGrupo = []; // Nueva cola de pacientes
+
+export function agregarPacienteGrupo(paciente) {
+    colaPacientesGrupo.push(paciente); // Añade al final de la cola
+}
+
+export function atenderPacienteGrupo() {
+    return colaPacientesGrupo.shift(); // Remueve al primer paciente de la cola
+}
+
+// Ejemplo de uso para pacientes con cola
+console.log("/////// --- Trabajo Grupal ---  Ejemplo de uso para pacientes con cola///////////");
+agregarPacienteGrupo("Pedro");
+agregarPacienteGrupo("María");
+console.log("Pacientes en la cola:", colaPacientesGrupo);
+console.log("Atendiendo paciente:", atenderPacienteGrupo());
+console.log("Pacientes restantes:", colaPacientesGrupo);
+console.log(" ");
+
+// Algoritmos de búsqueda y ordenamiento
+
+// Búsqueda por especialidad
+export function buscarPorEspecialidadGrupo(especialidad) {
+    if (!window.doctoresArray || !Array.isArray(window.doctoresArray)) {
+        console.error("window.doctoresArray no está inicializado o no es un arreglo.");
+        return []; // Devuelve un arreglo vacío en caso de error
+    }
+    return window.doctoresArray.filter((doctor) => doctor.especialidad === especialidad);
+}
+
+// Ejemplo de uso de búsqueda por especialidad
+console.log("/////// --- Trabajo Grupal ---  Ejemplo de uso para Búsqueda por especialidad///////////");
+console.log("Doctores en Cardiología:", buscarPorEspecialidadGrupo("Cardiología"));
+console.log(" ");
+
+// Ordenamiento por años de experiencia
+export function ordenarDoctoresPorAñosDeExperienciaGrupo() {
+    if (!window.doctoresArray || !Array.isArray(window.doctoresArray)) {
+        console.error("window.doctoresArray no está inicializado o no es un arreglo.");
+        return []; // Devuelve un arreglo vacío en caso de error
+    }
+    return [...window.doctoresArray].sort((a, b) => b.experiencia - a.experiencia);
+}
+
+// Ejemplo de uso de ordenamiento por experiencia
+console.log("/////// --- Trabajo Grupal ---  Ejemplo de uso para Ordenamiento por años de experiencia///////////");
+console.log("Doctores ordenados por experiencia:", ordenarDoctoresPorAñosDeExperienciaGrupo());
+console.log(" ");
+
+// --- Punto 3 :  Ya era parte de lo desarrollado en el laboratorio 2
+
+// --- Punto 4 :  Ya era parte de lo desarrollado en el laboratorio 2
+
+// --- Punto 5: Programación Asíncrona y Eventos ---
+
+// Simulación de un registro de citas con async/await y promesas
+console.log("/////// --- Trabajo Grupal ---  Simulación de un registro de citas con async/await y promesas///////////");
+export async function registrarCita(cita) {
+    try {
+        console.log("Iniciando registro de cita...");
+        // Simular una API que registra la cita con una promesa
+        const respuesta = await new Promise((resolve, reject) => {
+            setTimeout(() => {
+                if (Math.random() > 0.1) { // 90% de éxito
+                    resolve(`Cita registrada: ${JSON.stringify(cita)}`);
+                } else {
+                    reject("Error al registrar la cita.");
+                }
+            }, 2000); // Simula un retraso de 2 segundos
+        });
+
+        console.log(respuesta);
+    } catch (error) {
+        console.error("Error durante el registro de cita:", error);
+    }
+}
+console.log(" ");
+
+// Ejemplo de uso de la función asíncrona
+const citaEjemplo = { paciente: "Pedro", doctor: "Dr. Pérez", hora: "11:00" };
+registrarCita(citaEjemplo);
+
+// Listener para confirmar la cita
+console.log("/////// --- Trabajo Grupal ---   Listener para confirmar la cita///////////");
+document.addEventListener("DOMContentLoaded", () => {
+    const confirmarCitaBtn = document.getElementById("confirmarCita");
+    if (confirmarCitaBtn) {
+        confirmarCitaBtn.addEventListener("click", async () => {
+            console.log("Evento: Confirmar cita");
+            await registrarCita({
+                paciente: "María",
+                doctor: "Dra. Gómez",
+                hora: "12:00",
+            });
+        });
+    }
+});
+console.log(" ");
+
+// Event listener para solicitar información de un doctor
+console.log("/////// --- Trabajo Grupal ---   Event listener para solicitar información de un doctor///////////");
+document.addEventListener("DOMContentLoaded", () => {
+    const solicitarInfoBtn = document.getElementById("solicitarInfo");
+    if (solicitarInfoBtn) {
+        solicitarInfoBtn.addEventListener("click", () => {
+            console.log("Evento: Solicitar información de un doctor");
+            const doctorInfo = buscarDoctor("Dr. Juan Pérez"); // Reutiliza la función de búsqueda
+            if (doctorInfo) {
+                console.log("Información del doctor:", doctorInfo);
+            } else {
+                console.error("Doctor no encontrado.");
+            }
+        });
+    }
+});
+console.log(" ");

@@ -242,3 +242,174 @@ El **event loop** es el mecanismo que permite a JavaScript manejar tareas asínc
 1. Abre el proyecto en un servidor local o directamente en el navegador (se recomienda Live Server).
 2. Revisa la funcionalidad en las diferentes páginas (`equipo-medico.html` y `contacto.html`).
 3. Verifica la consola para los mensajes de debug y confirmación de funcionalidades.
+
+# Trabajo Grupal: Desarrollo Completo del Sistema del Hospital con JavaScript Avanzado
+
+## Descripción General
+Este proyecto incluye la implementación completa de un sistema para un hospital ficticio, usando JavaScript avanzado. Se abordan todos los puntos del enunciado del trabajo grupal, incluyendo manipulación de JSON, programación funcional, orientada a objetos, asincrónica y manejo de eventos.
+
+---
+
+## Punto 1: Manipulación de Datos con JSON y Simulación de API REST
+Se utilizó JSON para manejar la información de doctores y se simula una API REST para cargar los datos dinámicamente en la interfaz.
+
+### Implementaciones:
+1. **Cargar Datos desde JSON**:
+   - Uso de `fetch` para obtener datos desde un archivo local `doctores.json`.
+   - Se almacenan los datos en una variable global `window.doctoresArray` para permitir su uso en otros puntos del trabajo.
+
+2. **Clonación y Fusión de Objetos JSON**:
+   - Clonar un objeto JSON usando `JSON.parse(JSON.stringify())`.
+   - Fusionar objetos JSON con el operador spread (`...`).
+
+3. **Recorrido de Datos**:
+   - Los datos de los doctores se recorren y muestran dinámicamente en tarjetas en la interfaz.
+
+### Ejemplo de Código:
+```javascript
+// Cargar datos desde el archivo JSON
+fetch("/assets/data/doctores.json")
+    .then((response) => response.json())
+    .then((data) => {
+        window.doctoresArray = data;
+        console.log("Datos cargados:", window.doctoresArray);
+    });
+```
+
+---
+
+## Punto 2: Implementación de Algoritmos y Estructuras de Datos
+Se implementaron algoritmos y estructuras de datos para gestionar la información de doctores y citas.
+
+### Implementaciones:
+1. **Algoritmos de Búsqueda y Ordenamiento**:
+   - **Búsqueda**: Buscar doctores por especialidad usando `filter`.
+   - **Ordenamiento**: Ordenar doctores por años de experiencia usando `sort`.
+
+2. **Estructuras de Datos**:
+   - **Pilas**: Para manejar citas (última en entrar, primera en salir).
+   - **Colas**: Para manejar pacientes en orden de llegada.
+
+### Ejemplo de Código:
+```javascript
+// Búsqueda por especialidad
+export function buscarPorEspecialidadGrupo(especialidad) {
+    return window.doctoresArray.filter((doctor) => doctor.especialidad === especialidad);
+}
+
+// Ordenar por años de experiencia
+export function ordenarDoctoresPorAñosDeExperienciaGrupo() {
+    return [...window.doctoresArray].sort((a, b) => b.experiencia - a.experiencia);
+}
+```
+
+---
+
+## Punto 3: Programación Funcional
+Se implementaron conceptos avanzados de programación funcional, como currying, composición de funciones y recursión.
+
+### Implementaciones:
+1. **Currying**:
+   - Calcular el costo total de servicios médicos basados en el número de consultas.
+2. **Composición de Funciones**:
+   - Aplicar descuentos al costo de los servicios.
+3. **Recursión**:
+   - Calcular el total de horas de consulta en una semana.
+
+### Ejemplo de Código:
+```javascript
+// Currying: Calcular costo total
+function calcularCostoConsulta(precioPorConsulta) {
+    return function (numeroDeConsultas) {
+        return precioPorConsulta * numeroDeConsultas;
+    };
+}
+```
+
+---
+
+## Punto 4: Programación Orientada a Objetos
+Se utilizó programación orientada a objetos (POO) para estructurar el proyecto con clases y subclases.
+
+### Implementaciones:
+1. **Clase Doctor**:
+   - Propiedades: `nombre`, `especialidad`, `experiencia`.
+   - Métodos: Mostrar información, calcular pacientes atendidos.
+   - Encapsulación: Getter y setter para `experiencia`.
+
+2. **Subclase Cirujano**:
+   - Extiende la clase `Doctor`.
+   - Sobrescribe el método para calcular pacientes atendidos, considerando operaciones realizadas.
+
+### Ejemplo de Código:
+```javascript
+// Clase Doctor
+class Doctor {
+    constructor(nombre, especialidad, experiencia) {
+        this.nombre = nombre;
+        this.especialidad = especialidad;
+        let _experiencia = experiencia;
+        this.getExperiencia = () => _experiencia;
+        this.setExperiencia = (nuevaExperiencia) => {
+            if (nuevaExperiencia >= 0) _experiencia = nuevaExperiencia;
+        };
+    }
+}
+
+// Subclase Cirujano
+class Cirujano extends Doctor {
+    constructor(nombre, especialidad, experiencia, operacionesPorMes) {
+        super(nombre, especialidad, experiencia);
+        this.operacionesPorMes = operacionesPorMes;
+    }
+}
+```
+
+---
+
+## Punto 5: Programación Asíncrona y Eventos
+Se integraron conceptos de programación asíncrona y manejo de eventos para registrar citas y manejar interacciones del usuario.
+
+### Implementaciones:
+1. **Programación Asíncrona**:
+   - Función `async/await` para simular el registro de citas.
+   - Manejo de errores con `try/catch`.
+
+2. **Manejo de Eventos**:
+   - Listener para confirmar citas.
+   - Listener para solicitar información de un doctor.
+
+### Ejemplo de Código:
+```javascript
+// Simulación de registro de citas con async/await
+async function registrarCita(cita) {
+    try {
+        const respuesta = await new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve(`Cita registrada: ${JSON.stringify(cita)}`);
+            }, 2000);
+        });
+        console.log(respuesta);
+    } catch (error) {
+        console.error("Error durante el registro de cita:", error);
+    }
+}
+
+// Listener para confirmar cita
+document.getElementById("confirmarCita").addEventListener("click", async () => {
+    await registrarCita({ paciente: "María", doctor: "Dra. Gómez", hora: "12:00" });
+});
+```
+
+---
+
+## Instrucciones para Ejecutar el Proyecto
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/tu-usuario/nombre-del-repo.git
+   ```
+2. Navega al directorio del proyecto:
+   ```bash
+   cd nombre-del-repo
+   ```
+3. Abre el proyecto en un servidor local (se recomienda **Live Server**).
